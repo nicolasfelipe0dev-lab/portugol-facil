@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugol Fácil - Exercícios Avançado</title> 
+    <style>
+        body { background-color: rgb(34, 33, 28); font-family: 'Segoe UI', sans-serif; color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .rodape { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: #1a1a1acc; width: 100%; box-sizing: border-box; position: sticky; top: 0; z-index: 1000; }
+        .logo { height: 45px; width: auto; }
+        .btns-rodape { display: flex; gap: 10px; }
+        .btn { background: transparent; border: 2px solid transparent; padding: 8px 16px; cursor: pointer; color: #ccc; font-weight: 600; border-radius: 6px; transition: all 0.3s ease; text-decoration: none; }
+        .btn:hover, .btn-ativo { color: rgb(255, 255, 255); border-color: rgb(160, 127, 20); background-color: rgba(160, 139, 20, 0.2); }            
+        .titulo { text-align: center; margin-top: 40px; font-size: 2.3rem; color: #ffcc00; }
+        .subtitulo { text-align: center; color: #ccc; margin-bottom: 30px; }
+        .container-exercicios { width: 80%; max-width: 800px; margin-bottom: 60px; display: flex; flex-direction: column; gap: 20px; }
+        
+        .card-exercicio { background-color: rgb(26, 25, 21); border-left: 5px solid #ff4444; border-radius: 8px; padding: 25px; box-sizing: border-box; }
+        .card-exercicio h4 { margin: 0 0 8px 0; color: #fff4b3; font-size: 1.2rem; }
+        .card-exercicio p { margin: 0 0 15px 0; color: #b3b3b3; font-size: 14px; line-height: 1.5; }
+        
+        details { background-color: rgba(0, 0, 0, 0.3); border-radius: 6px; padding: 5px 10px; border: 1px solid rgba(255, 68, 68, 0.2); }
+        summary { cursor: pointer; color: #ff4444; font-weight: bold; font-size: 14px; outline: none; }
+        pre { background-color: rgb(18, 17, 14); color: #61afef; padding: 15px; border-radius: 4px; overflow-x: auto; font-family: monospace; font-size: 13px; margin: 10px 0 5px 0; border-left: 3px solid #ff4444; }
+        .btn-voltar { display: inline-block; margin-bottom: 20px; color: #ffcc00; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+        <div class="btns-rodape">
+            <a href="exercicios.html" class="btn btn-ativo">Exercícios</a>
+            <a href="bibliotecas.html" class="btn">Bibliotecas</a>
+            <a href="leitura.html" class="btn">Leitura de Código</a>
+            <a href="logica.html" class="btn">Lógica</a>
+        </div>
+    </section>
+
+    <h1 class="titulo">Nível 3: Avançado</h1>
+    <p class="subtitulo">Conceitos: Estruturas Compostas, Funções e Desvios de Fluxo Diretos</p>
+    <a href="exercicios.html" class="btn-voltar">← Voltar para seleção de níveis</a>
+
+    <div class="container-exercicios">
+        
+        <div class="card-exercicio">
+            <h4>Exercício 01: Laço Para Clássico</h4>
+            <p>Utilizando a estrutura controlada para, desenvolva uma rotina automática que exiba todos os múltiplos de 5 no intervalo de 0 até 50.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    para (inteiro i = 0; i <= 50; i += 5) {
+      escreva(i, " ")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 02: Soma de Ímpares com Intervalo</h4>
+            <p>Escreva um algoritmo com o laço para que calcule a soma acumulada de todos os números ímpares que se encontram entre 1 e 100.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro soma = 0
+    para (inteiro i = 1; i <= 100; i++) {
+      se (i % 2 != 0) {
+        soma = soma + i
+      }
+    }
+    escreva("A soma de todos os ímpares de 1 a 100 é: ", soma)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 03: Interrupção com Pare</h4>
+            <p>Crie um loop infinito utilizando enquanto(verdadeiro). Dentro dele, peça um número. Se o número digitado for igual a 0, utilize o comando pare para quebrar o fluxo.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro n
+    enquanto (verdadeiro) {
+      escreva("Digite um número (0 para sair): ") leia(n)
+      se (n == 0) {
+        escreva("Comando 'pare' acionado!")
+        pare
+      }
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 04: Função de Dobro</h4>
+            <p>Crie uma funcao personalizada chamada "calcular_dobro" que receba um parâmetro inteiro e utilize a palavra-chave retorne para devolver o dobro do valor.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inteiro calcular_dobro(inteiro x) {
+    retorne x * 2
+  }
+
+  funcao inicio() {
+    inteiro resultado = calcular_dobro(15)
+    escreva("O dobro de 15 é: ", resultado)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 05: Função Maior Valor</h4>
+            <p>Desenvolva uma funcao que receba dois parâmetros numéricos inteiros e use o comando retorne para devolver o maior valor.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inteiro maior(inteiro a, inteiro b) {
+    se (a > b) { retorne a }
+    senao { retorne b }
+  }
+
+  funcao inicio() {
+    escreva("Maior entre 8 e 12 é: ", maior(8, 12))
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 06: Preenchimento de Vetor</h4>
+            <p>Declare um vetor de tamanho 5 para armazenar números inteiros. Use uma estrutura para para ler as entradas do usuário e preencher as 5 posições.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro numeros[5]
+    para (inteiro i = 0; i < 5; i++) {
+      escreva("Digite o valor para o índice [", i, "]: ")
+      leia(numeros[i])
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 07: Exibição Inversa de Vetor</h4>
+            <p>Aproveitando o vetor preenchido, monte um laço para configurado para percorrer as posições de trás para frente, exibindo de forma inversa.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro vet[5] = {10, 20, 30, 40, 50}
+    para (inteiro i = 4; i >= 0; i--) {
+      escreva(vet[i], " ")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 08: Busca de Elemento no Vetor</h4>
+            <p>Crie um algoritmo que leia 3 nomes em um vetor. Em seguida, peça para digitar um nome e procure se esse nome existe cadastrado.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    cadeia nomes[3] = {"Ana", "Pedro", "Luiz"}, busca
+    logico achou = falso
+    escreva("Procurar por qual nome? ") leia(busca)
+    
+    para(inteiro i=0; i<3; i++) {
+      se(nomes[i] == busca) { achou = verdadeiro }
+    }
+    
+    se (achou) { escreva("Nome encontrado no vetor!") }
+    senao { escreva("Nome não cadastrado.") }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 09: Maior Valor no Vetor</h4>
+            <p>Desenvolva um programa que armazene 5 números reais em um vetor e no final identifique o maior valor salvo.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real valores[5] = {4.5, 9.2, 1.2, 8.6, 3.3}, maior = 0.0
+    para(inteiro i=0; i<5; i++) {
+      se (i == 0 ou valores[i] > maior) {
+        maior = valores[i]
+      }
+    }
+    escreva("O maior valor do vetor é: ", maior)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 10: Filtrando Vetores</h4>
+            <p>Escreva um algoritmo que preencha um vetor de 4 números inteiros. No final do preenchimento, exiba apenas os números salvos que forem pares.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro vet[4] = {12, 7, 18, 5}
+    escreva("Valores pares encontrados: ")
+    para(inteiro i=0; i<4; i++) {
+      se (vet[i] % 2 == 0) {
+        escreva(vet[i], " ")
+      }
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 11: Declaração de Matriz Básica</h4>
+            <p>Declare uma matriz quadrada com dimensões 2x2. Crie laços para preencher toda a grade.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro matriz[2][2]
+    para(inteiro l=0; l<2; l++) {
+      para(inteiro c=0; c<2; c++) {
+        escreva("Posição [",l,"][",c,"]: ") leia(matriz[l][c])
+      }
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 12: Soma da Diagonal Principal</h4>
+            <p>A partir de uma matriz 2x2 preenchida, isole e realize a soma apenas dos valores contidos na diagonal principal.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro mat[2][2] = {{5, 3}, {2, 9}}, soma = 0
+    para(inteiro i=0; i<2; i++) {
+      soma = soma + mat[i][i] // Linha e coluna iguais = diagonal
+    }
+    escreva("Soma da diagonal principal: ", soma)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 13: Matriz de Notas de Alunos</h4>
+            <p>Crie uma matriz de reais de tamanho 2x3. Cada linha representará as duas notas de um aluno. Calcule a média e guarde na última coluna.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real boletim[2][3] = {{8.0, 6.0, 0.0}, {5.0, 4.0, 0.0}}
+    para(inteiro l=0; l<2; l++) {
+      boletim[l][2] = (boletim[l][0] + boletim[l][1]) / 2
+      escreva("Média do aluno ", l+1, ": ", boletim[l][2], "\n")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 14: Função de Fatorial</h4>
+            <p>Escreva uma funcao que receba um número inteiro por parâmetro, calcule o seu fatorial e retorne o resultado.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inteiro fatorial(inteiro n) {
+    inteiro f = 1
+    para(inteiro i = n; i > 1; i--) { f = f * i }
+    retorne f
+  }
+
+  funcao inicio() {
+    escreva("Fatorial de 5 é: ", fatorial(5))
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 15: Sistema de Login Simples</h4>
+            <p>Utilizando funções, verifique se usuário e senha conferem. Use pare caso atinja 3 tentativas erradas.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    cadeia user
+    inteiro tentativa = 1
+    enquanto (verdadeiro) {
+      escreva("User: ") leia(user)
+      se (user == "admin") {
+        escreva("Acesso Liberado!") pare
+      } se (tentativa == 3) {
+        escreva("Conta Bloqueada por segurança!") pare
+      }
+      tentativa++
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 16: Multiplicação de Matriz por Escalar</h4>
+            <p>Multiplique cada item de uma matriz 2x2 carregada por um número inteiro digitado pelo usuário.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro m[2][2] = {{2, 4}, {3, 1}}, esc
+    escreva("Multiplicar por quanto? ") leia(esc)
+    para(inteiro l=0; l<2; l++) {
+      para(inteiro c=0; c<2; c++) {
+        m[l][c] *= esc
+        escreva(m[l][c], " ")
+      }
+      escreva("\n")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 17: Vetor Ordenado (Bubble Sort)</h4>
+            <p>Insira 3 números em um vetor e organize-os usando laços para estruturados em ordem crescente.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro v[3] = {9, 2, 5}, aux
+    para(inteiro i=0; i<3; i++) {
+      para(inteiro j=i+1; j<3; j++) {
+        se(v[i] > v[j]) {
+          aux = v[i]
+          v[i] = v[j]
+          v[j] = aux
+        }
+      }
+    }
+    escreva("Ordenado: ", v[0], " ", v[1], " ", v[2])
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 18: Função Par ou Ímpar Lógica</h4>
+            <p>Desenvolva uma funcao chamada "e_par" que receba um número e retorne um tipo de dado logico (verdadeiro ou falso).</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao logico e_par(inteiro n) {
+    se (n % 2 == 0) { retorne verdadeiro }
+    senao { retorne falso }
+  }
+
+  funcao inicio() {
+    escreva("O número 4 é par? ", e_par(4))
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 19: Transposta de uma Matriz</h4>
+            <p>Crie um programa que leia uma matriz de dimensão 3x2 e inverta imprimindo-a no formato 2x3 (transposição).</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro original[3][2] = {{1,2}, {3,4}, {5,6}}
+    para(inteiro c=0; c<2; c++) {
+      para(inteiro l=0; l<3; l++) {
+        escreva(original[l][c], " ")
+      }
+      escreva("\n")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 20: Jogo da Velha (Tabuleiro)</h4>
+            <p>Utilize uma matriz de caracteres de 3x3 para simular o tabuleiro do Jogo da Velha preenchido por hífens ('-').</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    caracter velha[3][3]
+    para(inteiro l=0; l<3; l++) {
+      para(inteiro c=0; c<3; c++) {
+        velha[l][c] = '-'
+        escreva(velha[l][c], " ")
+      }
+      escreva("\n")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+    </div>
+
+</body>
+</html>

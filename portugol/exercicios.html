@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugol Fácil - Exercícios</title> 
+    <style>
+        body {
+            background-color: rgb(34, 33, 28); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+       
+        .rodape {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;          
+            padding: 15px 5%;            
+            background-color: #1a1a1acc;    
+            width: 100%;                    
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 45px; 
+            width: auto;
+        }
+
+        .btns-rodape {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: #ccc;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-decoration: none; 
+        }
+
+        .btn:hover {
+            color: rgb(255, 255, 255);
+            border-color: rgb(160, 127, 20);
+            background-color: rgba(160, 139, 20, 0.2);
+        }            
+
+        @media (max-width: 768px) {
+            .rodape {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btns-rodape {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container-niveis {
+                grid-template-columns: 1fr !important; 
+                width: 90% !important;
+            }
+        }
+
+        .titulo {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 2.5rem;
+            color: #ffcc00; 
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .container-niveis {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 80%;
+            max-width: 1100px;
+            margin-bottom: 50px;
+        }
+
+        
+        .radio-oculto {
+            display: none;
+        }
+
+      
+        .card-nivel {
+            background-color: rgb(26, 25, 21);
+            border: 2px solid transparent;
+            border-radius: 18px;
+            padding: 30px 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+
+        .tag-nivel {
+            background-color: #e67e22;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 6px;
+            width: fit-content;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+ 
+       
+        .card-nivel h2 {
+            margin: 0 0 12px 0;
+            color: #fff4b3;
+            font-size: 1.8rem;
+        }
+
+        
+        .card-nivel p {
+            margin: 0;
+            color: #b3b3b3;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+       
+        .card-nivel:hover {
+            transform: translateY(-5px);
+            background-color: rgb(31, 30, 25);
+            border-color: rgba(230, 126, 34, 0.4);
+        }
+
+       
+        .radio-oculto:checked + .card-nivel {
+            border-color: #ffcc00; 
+            background-color: rgb(36, 34, 28);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .radio-oculto:checked + .card-nivel h2 {
+            color: #ffcc00; 
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .radio-oculto:checked + .card-nivel {
+            border: 2px solid #0056b3; 
+            background-color: #f0f7ff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html">
+            <img src="logo.png" alt="logo" class="logo">
+        </a>
+        <div class="btns-rodape">
+            <a href="exercicios.html" class="btn">Exercícios</a>
+            <a href="bibliotecas.html" class="btn">Bibliotecas</a>
+            <a href="leitura.html" class="btn">Leitura de Código</a>
+            <a href="logica.html" class="btn">Lógica</a>
+        </div>
+    </section>
+
+    <h1 class="titulo">Exercícios de Lógica de Programação</h1>
+    <p class="subtitulo">Escolha o nível de complexidade dos desafios abaixo</p>
+
+    <div class="container-niveis">
+       <div class="container-niveis">
+    <a href="ex-1.html" class="link-card">
+        <div class="card-nivel ativo"> <span class="tag-nivel">Nível 01</span>
+            <h2>Iniciante</h2>
+            <p>Ideal para quem está começando. Exercícios focados em variáveis, estruturas de entrada/saída (leia e escreva) e operações matemáticas simples.</p>
+        </div>
+    </a>
+
+    <a href="ex-2.html" class="link-card">
+            <div class="card-nivel">
+                <span class="tag-nivel">Nível 02</span>
+                <h2>Médio</h2>
+                <p>Algoritmos complexos exigindo manipulação avançada de laços de repetição, além de estruturas de dados compostas como vetores e matrizes.</p>
+            </div>
+        </a>
+
+    <a href="ex-3.html" class="link-card">
+        <div class="card-nivel">
+            <span class="tag-nivel">Nível 03</span>
+            <h2>Avançado</h2>
+            <p>Algoritmos complexos exigindo manipulação avançada de laços de repetição, além de estruturas de dados compostas como vetores e matrizes.</p>
+        </div>
+    </a>
+
+    <a href="ex-bibliotecas.html" class="link-card">
+        <div class="card-nivel">
+            <span class="tag-nivel">Bibliotecas</span>
+            <h2>Bibliotecas</h2>
+            <p>Aprenda a usar bibliotecas e seus comandos</p>
+        </div>
+    </a>
+
+    
+       
+</div>
+    </div>
+
+</body>
+</html>

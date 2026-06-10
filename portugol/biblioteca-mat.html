@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática - Portugol Fácil</title>
+    <style>
+        body { background-color: rgb(51, 49, 41); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        a { text-decoration: none; color: inherit; }
+        .rodape { display: flex; justify-content: space-between; align-items: center; padding: 8px 1%; background-color: #1a1a1acc; width: 100%; box-sizing: border-box; position: sticky; top: 0; z-index: 1000; }
+        .logo { height: 90px; width: auto; padding: 5px; }
+        .btns-rodape { display: flex; gap: 10px; }
+        .btn { background: transparent; border: 2px solid transparent; padding: 8px 16px; cursor: pointer; color: #ccc; font-weight: 600; border-radius: 6px; transition: all 0.3s ease; }
+        .btn:hover { color: #ffcc00; }
+        .conteudo-detalhe { max-width: 900px; width: 90%; margin: 40px 0; padding: 30px; background-color: #2a2821; border: 1px solid #444137; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); box-sizing: border-box; }
+        h1 { color: #ffcc00; font-size: 2.2rem; margin-top: 0; }
+        .btn-voltar { display: inline-block; background-color: #e67300; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; margin-bottom: 25px; transition: background 0.2s; }
+        .btn-voltar:hover { background-color: #ff8c1a; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; text-align: left; }
+        th, td { padding: 14px; border-bottom: 1px solid #444137; }
+        th { color: #ffe680; font-size: 1.1rem; background-color: #24211a; }
+        tr:hover { background-color: #343128; }
+        code { background-color: #1a1a1a; color: #ff9900; padding: 4px 8px; border-radius: 4px; font-family: monospace; font-size: 0.95rem; }
+        @media (max-width: 768px) { .rodape { flex-direction: column; gap: 15px; } .btns-rodape { flex-wrap: wrap; justify-content: center; } }
+    </style>
+</head>
+<body>
+    <section class="rodape">
+        <img src="logo.png" alt="logo" class="logo">
+        <div class="btns-rodape">
+            <a href="exercicios.html"><button class="btn">Exercícios</button></a>
+            <a href="bibliotecas.html"><button class="btn">Bibliotecas</button></a>
+            <a href="leitura.html"><button class="btn">Leitura de Código</button></a>
+            <a href="logica.html"><button class="btn">Lógica</button></a>
+        </div>
+    </section>
+
+    <div class="conteudo-detalhe">
+        <a href="bibliotecas.html" class="btn-voltar">← Voltar para Bibliotecas</a>
+        <h1> Biblioteca: Matemática</h1>
+        <p><strong>Utilidade:</strong> Contém funções matemáticas prontas para realizar cálculos avançados, como potenciação, raízes, trigonometria e arredondamentos de valores reais.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Comando / Função</th>
+                    <th>Descrição / O que faz</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>mat.raiz(numero, radicando)</code></td><td>Calcula a raiz de um número com base no radicando (ex: 2 para quadrada).</td></tr>
+                <tr><td><code>mat.potencia(base, expoente)</code></td><td>Eleva a base ao expoente especificado.</td></tr>
+                <tr><td><code>mat.arredondar(numero, casas)</code></td><td>Arredonda um número real para a quantidade de casas decimais desejada.</td></tr>
+                <tr><td><code>mat.maior_numero(a, b)</code></td><td>Analisa e retorna o maior valor entre dois números.</td></tr>
+                <tr><td><code>mat.menor_numero(a, b)</code></td><td>Analisa e retorna o menor valor entre dois números.</td></tr>
+                <tr><td><code>mat.absoluto(numero)</code></td><td>Retorna o valor absoluto (sempre positivo) de um número inteiro ou real.</td></tr>
+                <tr><td><code>mat.seno(angulo)</code></td><td>Calcula o seno de um ângulo medido em radianos.</td></tr>
+                <tr><td><code>mat.cosseno(angulo)</code></td><td>Calcula o cosseno de um ângulo medido em radianos.</td></tr>
+                <tr><td><code>mat.tangente(angulo)</code></td><td>Calcula a tangente de um ângulo medido em radianos.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

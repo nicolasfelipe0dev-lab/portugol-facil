@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugol Fácil - Exercícios Iniciante</title> 
+    <style>
+        body {
+            background-color: rgb(34, 33, 28);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .rodape {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;          
+            padding: 15px 5%;            
+            background-color: #1a1a1acc;    
+            width: 100%;                    
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { height: 45px; width: auto; }
+        .btns-rodape { display: flex; gap: 10px; }
+        
+        .btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: #ccc;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-decoration: none; 
+        }
+
+        .btn:hover, .btn-ativo {
+            color: rgb(255, 255, 255);
+            border-color: rgb(160, 127, 20);
+            background-color: rgba(160, 139, 20, 0.2);
+        }            
+
+        .titulo { text-align: center; margin-top: 40px; font-size: 2.3rem; color: #ffcc00; }
+        .subtitulo { text-align: center; color: #ccc; margin-bottom: 30px; }
+
+        .container-exercicios {
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-exercicio {
+            background-color: rgb(26, 25, 21);
+            border-left: 5px solid #e67e22;
+            border-radius: 8px;
+            padding: 25px;
+            box-sizing: border-box;
+        }
+
+        .card-exercicio h4 { margin: 0 0 8px 0; color: #fff4b3; font-size: 1.2rem; }
+        .card-exercicio p { margin: 0 0 15px 0; color: #b3b3b3; font-size: 14px; line-height: 1.5; }
+
+       
+        details {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            padding: 5px 10px;
+            border: 1px solid rgba(230, 126, 34, 0.2);
+        }
+
+        summary {
+            cursor: pointer;
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 14px;
+            outline: none;
+            user-select: none;
+            padding: 5px 0;
+        }
+
+        summary:hover { color: #ffe066; }
+
+        pre {
+            background-color: rgb(18, 17, 14);
+            color: #61afef;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            margin: 10px 0 5px 0;
+            border-left: 3px solid #ffcc00;
+        }
+
+        .btn-voltar {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+        <div class="btns-rodape">
+            <a href="exercicios.html" class="btn btn-ativo">Exercícios</a>
+            <a href="bibliotecas.html" class="btn">Bibliotecas</a>
+            <a href="leitura.html" class="btn">Leitura de Código</a>
+            <a href="logica.html" class="btn">Lógica</a>
+        </div>
+    </section>
+
+    <h1 class="titulo">Nível 1: Iniciante</h1>
+    <p class="subtitulo">Conceitos: Entrada/Saída, Variáveis Primitivas e Operadores Aritméticos</p>
+    <a href="exercicios.html" class="btn-voltar">← Voltar para seleção de níveis</a>
+
+    <div class="container-exercicios">
+        
+        <div class="card-exercicio">
+            <h4>Exercício 01: Mensagem na Tela</h4>
+            <p>Escreva um algoritmo que exiba a mensagem "Bem-vindo ao Portugol Fácil!" utilizando o comando escreva.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    escreva("Bem-vindo ao Portugol Fácil!")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 02: Nome do Usuário</h4>
+            <p>Crie um programa que leia o nome de uma pessoa (cadeia) e exiba uma saudação personalizada.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    cadeia nome
+    escreva("Digite seu nome: ")
+    leia(nome)
+    escreva("Olá ", nome, ", prazer em te conhecer!")
+  }
+ program}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 03: Soma Simples</h4>
+            <p>Escreva um programa que leia dois números inteiros informados pelo usuário e mostre a soma entre eles.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro n1, n2, soma
+    escreva("Digite o primeiro número: ")
+    leia(n1)
+    escreva("Digite o segundo número: ")
+    leia(n2)
+    soma = n1 + n2
+    escreva("A soma dos números é: ", soma)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 04: Média Bimestral</h4>
+            <p>Desenvolva um algoritmo que peça quatro notas reais de um aluno, calcule a média aritmética simples e exiba o resultado.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real n1, n2, n3, n4, media
+    escreva("Digite as 4 notas: \n")
+    leia(n1, n2, n3, n4)
+    media = (n1 + n2 + n3 + n4) / 4
+    escreva("A média final é: ", media)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 05: Sucessor e Antecessor</h4>
+            <p>Leia um número inteiro do teclado e imprima na tela o seu número antecessor e o seu número sucessor.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro numero
+    escreva("Digite um número: ")
+    leia(numero)
+    escreva("Antecessor: ", (numero - 1), " | Sucessor: ", (numero + 1))
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 06: Dobro e Terça Parte</h4>
+            <p>Crie um algoritmo que leia um número real e exiba o dobro dele e a sua terça parte.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real num
+    escreva("Digite um número: ")
+    leia(num)
+    escreva("Dobro: ", (num * 2), "\nTercá parte: ", (num / 3))
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 07: Conversor de Medidas</h4>
+            <p>Desenvolva um programa que leia um valor em metros e o exiba convertido em centímetros e milímetros.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real metros
+    escreva("Distância em metros: ")
+    leia(metros)
+    escreva("Centímetros: ", (metros * 100), " cm\nMilímetros: ", (metros * 1000), " mm")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 08: Tabuada Fixa</h4>
+            <p>Escreva um algoritmo que receba um número inteiro qualquer e exiba a tabuada de multiplicação dele do 1 ao 5 linha por linha.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro num
+    escreva("Digite um número para ver a tabuada: ")
+    leia(num)
+    escreva(num, " x 1 = ", num * 1, "\n")
+    escreva(num, " x 2 = ", num * 2, "\n")
+    escreva(num, " x 3 = ", num * 3, "\n")
+    escreva(num, " x 4 = ", num * 4, "\n")
+    escreva(num, " x 5 = ", num * 5, "\n")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 09: Conversão de Moeda</h4>
+            <p>Faça um programa que leia quanto dinheiro uma pessoa tem na carteira (em R$) e mostre quantos dólares ela pode comprar. Considere a cotação fixa de US$ 1.00 = R$ 5.00.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real carteira, dolares
+    escreva("Quanto dinheiro você tem na carteira? R$ ")
+    leia(carteira)
+    dolares = carteira / 5.00
+    escreva("Você pode comprar: US$ ", dolares)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 10: Área da Parede</h4>
+            <p>Faça um algoritmo que leia a largura e a altura de uma parede em metros, calcule a sua área quadrada e a quantidade de tinta necessária para pintá-la, sabendo que cada litro de tinta pinta uma área de 2 metros quadrados.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real larg, alt, area, tinta
+    escreva("Largura da parede: ")
+    leia(larg)
+    escreva("Altura da parede: ")
+    leia(alt)
+    area = larg * alt
+    tinta = area / 2
+    escreva("Área total: ", area, "m²\nQuantidade de tinta: ", tinta, " litros.")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 11: Desconto de Produto</h4>
+            <p>Crie um programa que leia o preço de um produto, calcule e mostre o seu novo preço com 5% de desconto.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real preco, novo_preco
+    escreva("Preço do produto: R$ ")
+    leia(preco)
+    novo_preco = preco - (preco * 0.05)
+    escreva("Preço com 5% de desconto: R$ ", novo_preco)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 12: Aumento Salarial</h4>
+            <p>Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o seu novo salário com 15% de aumento.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real salario, novo_salario
+    escreva("Salário atual: R$ ")
+    leia(salario)
+    novo_salario = salario + (salario * 0.15)
+    escreva("Salário com 15% de aumento: R$ ", novo_salario)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 13: Dias Trabalhados</h4>
+            <p>Um funcionário trabalha por dias. Cada dia trabalhado vale R$ 25,00. Faça um programa que leia o número de dias trabalhados por ele no mês e exiba o valor final do salário.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro dias
+    real salario
+    escreva("Quantos dias você trabalhou este mês? ")
+    leia(dias)
+    salario = dias * 25.00
+    escreva("Seu salário final será de: R$ ", salario)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 14: Divisão e Resto</h4>
+            <p>Crie um algoritmo que peça dois números inteiros e exiba o resultado da divisão inteira entre eles e também o resto da divisão (utilizando o operador % ).</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro n1, n2
+    escreva("Digite dois números: ")
+    leia(n1, n2)
+    escreva("Divisão inteira: ", (n1 / n2), "\n")
+    escreva("Resto da divisão (%): ", (n1 % n2))
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 15: Idade em Dias</h4>
+            <p>Escreva um algoritmo que leia a idade de uma pessoa expressa em anos e mostre-a expressa apenas em dias (considere o ano com 365 dias).</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro anos, dias
+    escreva("Quantos anos você tem? ")
+    leia(anos)
+    dias = anos * 365
+    escreva("Sua idade aproximada em dias é: ", dias, " dias.")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 16: Conversor de Temperatura</h4>
+            <p>Escreva um programa que converta uma temperatura digitada em graus Celsius para graus Fahrenheit.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real c, f
+    escreva("Temperatura em Celsius (°C): ")
+    leia(c)
+    f = (c * 9/5) + 32
+    escreva("Temperatura em Fahrenheit: ", f, "°F")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 17: Média Ponderada</h4>
+            <p>Crie um algoritmo que receba 3 notas de um aluno com os respectivos pesos: 2, 3 e 5. Calcule e exiba a média ponderada do aluno.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real n1, n2, n3, mp
+    escreva("Digite as 3 notas consecutivamente: \n")
+    leia(n1, n2, n3)
+    mp = ((n1*2) + (n2*3) + (n3*5)) / (2 + 3 + 5)
+    escreva("A média ponderada é: ", mp)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 18: Cadastro de Caractere</h4>
+            <p>Desenvolva um sistema que receba o sexo de uma pessoa armazenando em uma variável do tipo caracter ('M' ou 'F') e a sua idade. No final exiba os dois dados formatados na mesma linha.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    caracter sexo
+    inteiro idade
+    escreva("Digite o sexo (M/F): ")
+    leia(sexo)
+    escreva("Digite a idade: ")
+    leia(idade)
+    escreva("Perfil Cadastrado -> Sexo: ", sexo, " | Idade: ", idade, " anos.")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 19: Locadora de Carros</h4>
+            <p>Um carro alugado custa R$ 90 por dia e R$ 0,20 por Km rodado. Faça um programa que pergunte a quantidade de Km percorridos e a quantidade de dias pelos quais ele foi alugado. Calcule o preço total a pagar.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real km, total
+    inteiro dias
+    escreva("Quantos dias alugados? ")
+    leia(dias)
+    escreva("Quantos Km rodados? ")
+    leia(km)
+    total = (dias * 90) + (km * 0.20)
+    escreva("Total a pagar à locadora: R$ ", total)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 20: Tempo de Fumante</h4>
+            <p>Calcule a redução do tempo de vida de um fumante. Pergunte a quantidade de cigarros fumados por dia e quantos anos ele já fumou. Considere que cada cigarro reduz 10 minutos de vida. Exiba o total de dias de vida perdidos.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro cigarros_dia, anos_fumando, total_cigarros
+    real minutos_perdidos, dias_perdidos
+    escreva("Cigarros fumados por dia: ")
+    leia(cigarros_dia)
+    escreva("Quantos anos já fumou? ")
+    leia(anos_fumando)
+    
+    total_cigarros = (anos_fumando * 365) * cigarros_dia
+    minutos_perdidos = total_cigarros * 10
+    dias_perdidos = minutos_perdidos / 1440 // 1440 é a quantidade de minutos em 1 dia
+    
+    escreva("Você perdeu aproximadamente: ", dias_perdidos, " dias de vida.")
+  }
+}</pre>
+            </details>
+        </div>
+
+    </div>
+
+</body>
+</html>

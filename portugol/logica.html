@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica dos Comandos - Portugol Fácil</title>
+    <style>
+        body {
+            background-color: rgb(51, 49, 41);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+      
+        .rodape {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;           
+            padding: 8px 1%;            
+            background-color: #1a1a1acc;    
+            width: 100%;                    
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 90px; 
+            width: auto;
+            padding: 5px;
+        }
+
+        .btns-rodape {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: #ccc;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            color: #ffcc00;
+        }
+
+        .conteudo-principal {
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            margin: 50px 0 30px 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .conteudo-principal h1 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .conteudo-principal p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .container-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 90%;
+            margin-bottom: 60px;
+        }
+
+        .card-cont {
+            background-color: #2a2821;
+            border: 1px solid #444137;
+            border-radius: 15px;
+            padding: 25px 20px;
+            color: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: left;
+        }
+
+        .card-cont:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 165, 0, 0.25);
+            border-color: #ff9900;
+        }
+
+        .card-cont h2 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: #ffe680;
+        }
+
+        .card-cont p {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.4;
+        }
+
+        .tag-tipo {
+            display: inline-block;
+            background-color: #e67300;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .rodape {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btns-rodape {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .conteudo-principal h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+        <div class="btns-rodape">
+            <a href="exercicios.html"><button class="btn">Exercícios</button></a>
+            <a href="bibliotecas.html"><button class="btn">Bibliotecas</button></a>
+            <a href="leitura.html"><button class="btn">Leitura de Código</button></a>
+            <a href="logica.html"><button class="btn">Lógica</button></a>
+        </div>
+    </section>
+
+    <div class="conteudo-principal">
+        <h1>Lógica dos Comandos</h1>
+        <p>Compreenda a estrutura lógica fundamental por trás das palavras-chave que ditam o comportamento do seu algoritmo.</p>
+    </div>
+
+    <div class="container-cards">
+        <div class="card-cont">
+            <span class="tag-tipo">Condicional</span>
+            <h2>se / senao</h2>
+            <p>Cria ramificações na execução do programa. Se uma condição for verdadeira, executa um bloco; do contrário, executa uma alternativa.</p>
+        </div>
+        
+        <div class="card-cont">
+            <span class="tag-tipo">Repetição</span>
+            <h2>enquanto</h2>
+            <p>Executa repetidamente um bloco de comandos testando a condição no início. Continua rodando enquanto o teste for verdadeiro.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Repetição</span>
+            <h2>para</h2>
+            <p>Utilizado para repetições onde você sabe antecipadamente o limite exato de vezes que o bloco deve ser iterado por meio de uma variável de controle.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Seleção</span>
+            <h2>escolha caso</h2>
+            <p>Uma alternativa mais limpa e legível a múltiplos "se/senao se" encadeados quando se avalia valores fixos de uma única variável.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Estrutura de controles</span>
+            <h2>faça enquanto</h2>
+            <p>Garante que o bloco de comandos seja executado pelo menos uma vez antes de avaliar a condição. Continua repetindo enquanto o teste para verdadeiro.</p>
+        </div>
+
+        <div class="card-cont">
+            <spna class="tag-tipo">Entrada e conhecimento de Dados</spna>
+            <h2>Escreva</h2>
+            <p>Exibe informações na tela do usuário, permitindo exibir textos literários, valores armazenados em variáveis ​​ou resultados de expressões.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Entrada e conhecimento de Dados</span>
+            <h2>leia</h2>
+            <p>Interrompe a execução do programa para aguardar uma entrada do usuário via teclado, armazenando o valor digitado em uma variável.</p>
+        </div>
+
+        <div class="card-cont">
+            <spna class="tag-tipo">Estrutura Global do Programa</spna>
+            <h2>programa</h2>
+            <p>Delimita o escopo principal do código. Funciona como o contêiner obrigatório onde todo o algoritmo em Portugol deve ser desenvolvido.</p>
+        </div>
+
+        <div class="card-cont">
+            <spna class="tag-tipo">Estrutura Global do Programa</spna>
+            <h2>funcao</h2>
+            <p>Definir um bloco de código reutilizável que execute uma tarefa específica. A "função início" demarca o ponto exato onde começa a execução do programa.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Tipos de Dados e Variáveis</span>
+            <h2>inteiro</h2>
+            <p>Declara variáveis ​​específicas ao armazenamento de números inteiros, ou seja, valores numéricos positivos ou negativos que não possuem casas decimais.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Tipos de Dados e Variáveis</span>
+            <h2>real</h2>
+            <p>Declara variáveis ​​para o armazenamento de números reais. Permite trabalhar com valores que contêm frações ou pontos decimais.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Tipos de Dados e Variáveis</span>
+            <h2>cadeia</h2>
+            <p>Declara variáveis ​​para armazenar sequências de caracteres alfanuméricos, como palavras, frases ou códigos estruturados, sempre delimitados por aspas duplas.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Tipos de Dados e Variáveis</span>
+            <h2>caracter</h2>
+            <p>Declara variáveis projetadas para guardar um único caractere isolado (letra, dígito ou símbolo), delimitado por aspas simples.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Tipos de Dados e Variáveis</span>
+            <h2>logico</h2>
+            <p>Declara variáveis booleanas que podem assumir exclusivamente um de dois valores possíveis: verdadeiro ou falso.</p>
+        </div>
+
+         <div class="card-cont">
+            <span class="tag-tipo">Desvio de Fluxo</span>
+            <h2>pare</h2>
+            <p>Interrompe imediatamente a execução de um laço de repetição ou finaliza um bloco condicional "caso", forçando o programa a ir para a próxima linha fora da estrutura.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Desvio de Fluxo</span>
+            <h2>retorne</h2>
+            <p>Finaliza imediatamente a execução de uma função e envia um valor de resposta de volta para a linha de código que fez a chamada dessa função.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Estrutura de Dados</span>
+            <h2>vetor [ ]</h2>
+            <p>Declara uma estrutura unidimensional capaz de armazenar uma coleção ordenada de múltiplos valores do mesmo tipo de dado sob um único nome.</p>
+        </div>
+
+        <div class="card-cont">
+            <span class="tag-tipo">Estrutura de Dados</span>
+            <h2>matriz [ ][ ]</h2>
+            <p>Declara uma estrutura bidimensional disposta em linhas e colunas (grade), ideal para organizar tabelas de dados do mesmo tipo.</p>
+        </div>
+    </div>
+    
+</body>
+</html>

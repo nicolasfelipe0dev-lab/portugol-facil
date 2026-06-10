@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugol Fácil - Exercícios Intermediário</title> 
+    <style>
+        body { background-color: rgb(34, 33, 28); font-family: 'Segoe UI', sans-serif; color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .rodape { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: #1a1a1acc; width: 100%; box-sizing: border-box; position: sticky; top: 0; z-index: 1000; }
+        .logo { height: 45px; width: auto; }
+        .btns-rodape { display: flex; gap: 10px; }
+        .btn { background: transparent; border: 2px solid transparent; padding: 8px 16px; cursor: pointer; color: #ccc; font-weight: 600; border-radius: 6px; transition: all 0.3s ease; text-decoration: none; }
+        .btn:hover, .btn-ativo { color: rgb(255, 255, 255); border-color: rgb(160, 127, 20); background-color: rgba(160, 139, 20, 0.2); }            
+        .titulo { text-align: center; margin-top: 40px; font-size: 2.3rem; color: #ffcc00; }
+        .subtitulo { text-align: center; color: #ccc; margin-bottom: 30px; }
+        .container-exercicios { width: 80%; max-width: 800px; margin-bottom: 60px; display: flex; flex-direction: column; gap: 20px; }
+        
+        .card-exercicio { background-color: rgb(26, 25, 21); border-left: 5px solid #ffcc00; border-radius: 8px; padding: 25px; box-sizing: border-box; }
+        .card-exercicio h4 { margin: 0 0 8px 0; color: #fff4b3; font-size: 1.2rem; }
+        .card-exercicio p { margin: 0 0 15px 0; color: #b3b3b3; font-size: 14px; line-height: 1.5; }
+        
+        details { background-color: rgba(0, 0, 0, 0.3); border-radius: 6px; padding: 5px 10px; border: 1px solid rgba(255, 204, 0, 0.2); }
+        summary { cursor: pointer; color: #ffcc00; font-weight: bold; font-size: 14px; outline: none; }
+        pre { background-color: rgb(18, 17, 14); color: #61afef; padding: 15px; border-radius: 4px; overflow-x: auto; font-family: monospace; font-size: 13px; margin: 10px 0 5px 0; border-left: 3px solid #ffcc00; }
+        .btn-voltar { display: inline-block; margin-bottom: 20px; color: #ffcc00; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+        <div class="btns-rodape">
+            <a href="exercicios.html" class="btn btn-ativo">Exercícios</a>
+            <a href="bibliotecas.html" class="btn">Bibliotecas</a>
+            <a href="leitura.html" class="btn">Leitura de Código</a>
+            <a href="logica.html" class="btn">Lógica</a>
+        </div>
+    </section>
+
+    <h1 class="titulo">Nível 2: Intermediário</h1>
+    <p class="subtitulo">Conceitos: Estruturas Condicionais e Laços de Repetição Condicionados</p>
+    <a href="exercicios.html" class="btn-voltar">← Voltar para seleção de níveis</a>
+
+    <div class="container-exercicios">
+        
+        <div class="card-exercicio">
+            <h4>Exercício 01: Verificação de Velocidade</h4>
+            <p>Escreva um programa que leia a velocidade de um carro. Se ultrapassar 80 Km/h, exiba uma mensagem dizendo que ele foi multado. Caso contrário, exiba "Boa viagem!".</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real velocidade
+    escreva("Velocidade do veículo: ")
+    leia(velocidade)
+    se (velocidade > 80) {
+      escreva("Você foi MULTADO por excesso de velocidade!")
+    } senao {
+      escreva("Boa viagem! Dirija com segurança.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 02: Votação Obrigatória</h4>
+            <p>Faça um programa que leia o ano de nascimento de uma pessoa, calcule a sua idade e informe se ela já tem idade para votar.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro ano, idade
+    escreva("Em que ano você nasceu? ")
+    leia(ano)
+    idade = 2026 - ano
+    se (idade >= 16) {
+      escreva("Com ", idade, " anos você já pode votar!")
+    } senao {
+      escreva("Com ", idade, " anos você ainda não pode votar.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 03: Par ou Ímpar</h4>
+            <p>Desenvolva um algoritmo que receba um número inteiro do teclado e verifique se este número é PAR ou ÍMPAR.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro num
+    escreva("Digite um número: ")
+    leia(num)
+    se (num % 2 == 0) {
+      escreva("O número ", num, " é PAR.")
+    } senao {
+      escreva("O número ", num, " é ÍMPAR.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 04: Cálculo de Média com Situação</h4>
+            <p>Crie um programa que calcule a média de duas notas. Se a média for maior ou igual a 7.0, exiba "Aprovado". Se for menor, exiba "Reprovado".</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real n1, n2, media
+    escreva("Nota 1: ") leia(n1)
+    escreva("Nota 2: ") leia(n2)
+    media = (n1 + n2) / 2
+    se (media >= 7.0) {
+      escreva("Média: ", media, " - Aluno APROVADO!")
+    } senao {
+      escreva("Média: ", media, " - Aluno REPROVADO!")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 05: Comparando Números</h4>
+            <p>Escreva um algoritmo que leia dois números inteiros e os compare, exibindo se o primeiro é maior, o segundo é maior ou se são iguais.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro v1, v2
+    escreva("Valor 1: ") leia(v1)
+    escreva("Valor 2: ") leia(v2)
+    se (v1 > v2) {
+      escreva("O primeiro valor é maior.")
+    } senao se (v2 > v1) {
+      escreva("O segundo valor é maior.")
+    } senao {
+      escreva("Não existe valor maior, os dois são iguais.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 06: Menu de Lanchonete</h4>
+            <p>Utilizando a estrutura escolha caso, monte um menu onde o usuário digita o código do item (1 a 3) e o programa exibe o produto escolhido.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro codigo
+    escreva("Menu:\n1 - Hambúrguer (R$15)\n2 - Batata Frita (R$10)\n3 - Refrigerante (R$5)\nCódigo: ")
+    leia(codigo)
+    escolha(codigo) {
+      caso 1: escreva("Você escolheu Hambúrguer.") pare
+      caso 2: escreva("Você escolheu Batata Frita.") pare
+      caso 3: escreva("Você escolheu Refrigerante.") pare
+      caso contrario: escreva("Código Inválido.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 07: Alistamento Militar</h4>
+            <p>Leia o ano de nascimento de um jovem e informe se ele ainda vai se alistar (exiba quantos anos faltam) ou se já passou do tempo (exiba quantos anos de atraso).</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro ano, idade, calculo
+    escreva("Ano de nascimento: ") leia(ano)
+    idade = 2026 - ano
+    se (idade < 18) {
+      calculo = 18 - idade
+      escreva("Faltam ", calculo, " ano(s) para seu alistamento.")
+    } senao se (idade > 18) {
+      calculo = idade - 18
+      escreva("Você deveria ter se alistado há ", calculo, " ano(s).")
+    } senao {
+      escreva("Você completa 18 anos este ano! Aliste-se já.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 08: Calculadora Básica</h4>
+            <p>Crie uma calculadora simples. O usuário insere dois valores reais e digita um caracter contendo a operação desejada ('+', '-', '*', '/'). Use escolha caso.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real v1, v2
+    caracter operacao
+    escreva("Valor 1: ") leia(v1)
+    escreva("Operador (+ - * /): ") leia(operacao)
+    escreva("Valor 2: ") leia(v2)
+    
+    escolha(operacao) {
+      caso '+': escreva("Resultado: ", v1 + v2) pare
+      caso '-': escreva("Resultado: ", v1 - v2) pare
+      caso '*': escreva("Resultado: ", v1 * v2) pare
+      caso '/': escreva("Resultado: ", v1 / v2) pare
+      caso contrario: escreva("Operação inválida.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 09: Contador Progressivo</h4>
+            <p>Escreva um programa usando a estrutura enquanto que exiba na tela a contagem progressiva de 1 até 10, de 1 em 1.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro c = 1
+    enquanto (c <= 10) {
+      escreva(c, " ")
+      c = c + 1
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 10: Contador Regressivo</h4>
+            <p>Faça uma contagem regressiva de 10 até 0, exibindo "Fogo!" logo após o término do laço.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro c = 10
+    enquanto (c >= 0) {
+      escreva(c, " ")
+      c = c - 1
+    }
+    escreva("\nFogo!")
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 11: Tabuada Dinâmica</h4>
+            <p>Faça um algoritmo usando enquanto que peça um número para o usuário e gere a tabuada completa desse número do 1 ao 10.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro num, c = 1
+    escreva("Ver tabuada do: ") leia(num)
+    enquanto (c <= 10) {
+      escreva(num, " x ", c, " = ", num * c, "\n")
+      c = c + 1
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 12: Somador de Números</h4>
+            <p>Desenvolva um programa que peça para o usuário digitar 5 números inteiros seguidos (dentro de uma repetição) e no final exiba a soma acumulada de todos eles.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro c = 1, num, soma = 0
+    enquanto (c <= 5) {
+      escreva("Digite o ", c, "º número: ")
+      leia(num)
+      soma = soma + num
+      c = c + 1
+    }
+    escreva("A soma acumulada deu: ", soma)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 13: Validação de Notas</h4>
+            <p>Utilizando a estrutura faca enquanto, crie um validador que peça uma nota entre 0 e 10. Se o usuário digitar um valor errado, repita a pergunta.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real nota
+    faca {
+      escreva("Digite uma nota válida (de 0 a 10): ")
+      leia(nota)
+    } enquanto (nota < 0.0 ou nota > 10.0)
+    escreva("Nota salva com sucesso: ", nota)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 14: Contagem com Salto</h4>
+            <p>Crie um algoritmo em que o usuário possa digitar o valor inicial de uma contagem, o valor final e também o tamanho do passo de incremento.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro ini, fim, passo
+    escreva("Início: ") leia(ini)
+    escreva("Fim: ")    leia(fim)
+    escreva("Passo: ")  leia(passo)
+    
+    enquanto (ini <= fim) {
+      escreva(ini, " ")
+      ini = ini + passo
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 15: Análise de Notas Complexa</h4>
+            <p>Refaça o exercício da média adicionando três condições: Média abaixo de 5.0 (Reprovado), Média entre 5.0 e 6.9 (Recuperação) e Média acima de 7.0 (Aprovado).</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real n1, n2, media
+    escreva("Notas: ") leia(n1, n2)
+    media = (n1 + n2) / 2
+    se (media >= 7.0) {
+      escreva("Aprovado!")
+    } senao se (media >= 5.0 e media < 7.0) {
+      escreva("Recuperação.")
+    } senao {
+      escreva("Reprovado.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 16: Descobrindo o Maior Número</h4>
+            <p>Escreva um programa que leia 5 números inteiros dentro de um laço enquanto e no final identifique o maior número digitado.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro c = 1, num, maior = 0
+    enquanto (c <= 5) {
+      escreva("Digite um número: ") leia(num)
+      se (c == 1) { maior = num }
+      senao se (num > maior) { maior = num }
+      c = c + 1
+    }
+    escreva("O maior número digitado foi: ", maior)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 17: Média de Idades com Flag</h4>
+            <p>Faça um programa que leia a idade de vários alunos. O programa deve parar de ler apenas quando o usuário digitar o número "999". Exiba a média das idades.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro idade = 0, soma = 0, cont = 0
+    enquanto (idade != 999) {
+      escreva("Digite a idade (ou 999 para parar): ") leia(idade)
+      se (idade != 999) {
+        soma = soma + idade
+        cont = cont + 1
+      }
+    }
+    escreva("Média de idade do grupo: ", (soma / cont))
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 18: Classificação de Triângulos</h4>
+            <p>Leia três valores para os lados de um triângulo e classifique-o em: Equilátero, Isósceles ou Escaleno.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real a, b, c
+    escreva("Lados do triângulo: ") leia(a, b, c)
+    se (a == b e b == c) {
+      escreva("Triângulo Equilátero.")
+    } senao se (a == b ou b == c ou a == c) {
+      escreva("Triângulo Isósceles.")
+    } senao {
+      escreva("Triângulo Escaleno.")
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 19: Analisador de Caixa de Loja</h4>
+            <p>Crie um laço que receba o preço de vários produtos comprados. Quando o preço digitado for igual a 0, feche o caixa e exiba o total.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    real preco = 1.0, total = 0.0
+    enquanto (preco != 0) {
+      escreva("Preço do produto (ou 0 para fechar): R$ ") leia(preco)
+      total = total + preco
+    }
+    escreva("Compra finalizada! Total a pagar: R$ ", total)
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 20: Jogo de Adivinhação Embutido</h4>
+            <p>Defina um número secreto (ex: 7). Peça para o usuário tentar adivinhar. Repita o loop enquanto ele errar.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  funcao inicio() {
+    inteiro palpite, secreto = 7
+    escreva("Tente adivinhar o número secreto (1 a 10): ")
+    leia(palpite)
+    enquanto (palpite != secreto) {
+      escreva("Errou! Tente novamente: ")
+      leia(palpite)
+    }
+    escreva("Parabéns, você acertou!")
+  }
+}</pre>
+            </details>
+        </div>
+
+    </div>
+
+</body>
+</html>

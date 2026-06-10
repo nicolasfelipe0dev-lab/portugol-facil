@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugol Fácil</title>
+    <style>
+       
+        body {
+            background-color: rgb(51, 49, 41);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+       
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+      
+        .rodape {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;           
+            padding: 8px 1%;            
+            background-color: #1a1a1acc;    
+            width: 100%;                    
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 90px; 
+            width: auto;
+            padding: 5px;
+        }
+
+        .btns-rodape {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: #ccc;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+       
+        .btn:hover {
+            color: #ffcc00;
+        }
+
+        .conteudo-principal {
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            margin: 50px 0 30px 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+      
+        .conteudo-principal h1 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .conteudo-principal p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .container-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 90%;
+            margin-bottom: 50px;
+        }
+
+        .card-cont {
+            background-color: #2a2821;
+            border: 1px solid #444137;
+            border-radius: 15px;
+            padding: 25px 20px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+
+       
+        .card-cont:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 165, 0, 0.25);
+            border-color: #ff9900;
+        }
+
+       
+        .card-cont h2 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: #ffe680;
+        }
+
+        .card-cont p {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.4;
+        }
+        
+       
+        .dev {
+            background-color: #24211a;
+            border: 1px solid #3a352b;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;     
+            text-align: center;     
+            max-width: 600px; 
+            width: 90%;      
+            padding: 30px;   
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+
+        
+        .dev img {
+            width: 130px;
+            height: 130px;            
+            object-fit: cover;
+            border-radius: 50%; 
+            border: 3px solid #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .dev h3 {
+            margin: 10px 0 5px 0;
+            font-size: 1.6rem;
+            color: #ffcc00;
+        }
+
+        .dev p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #eaeaea;
+            margin-bottom: 20px;
+        }
+
+        
+        .dev button {
+            padding: 12px 24px;
+            background-color: #e67300;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+       
+        .dev button:hover {
+            background-color: #ff8c1a;
+        }
+
+        @media (max-width: 768px) {
+            .rodape {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btns-rodape {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .conteudo-principal h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <img src="logo.png" alt="logo" class="logo">
+        <div class="btns-rodape">
+            <a href="exercicios.html"><button class="btn">Exercícios</button></a>
+            <a href="bibliotecas.html"><button class="btn">Bibliotecas</button></a>
+            <a href="leitura.html"><button class="btn">Leitura de Código</button></a>
+            <a href="logica.html"><button class="btn">Lógica</button></a>
+        </div>
+    </section>
+
+    <div class="conteudo-principal">
+        <h1>Bem-vindo ao Portugol Fácil!</h1>
+        <p>Aprender a programar nunca foi tão simples. Uma plataforma criada especialmente para ajudar estudantes de Informática a dominarem os conceitos de lógica de programação de forma prática, dinâmica e totalmente acessível.</p>
+    </div>
+
+    <div class="container-cards">
+        <a href="exercicios.html">
+            <div class="card-cont">
+                <h2>Exercícios</h2>
+                <p>Aprenda botando na prática com exercícios focados em algoritmos.</p>
+            </div>
+        </a>
+        <a href="bibliotecas.html">
+            <div class="card-cont">
+                <h2>Bibliotecas</h2>
+                <p>Conheça e aprenda a usar as ferramentas nativas do Portugol.</p>
+            </div>
+        </a>
+        <a href="leitura.html">
+            <div class="card-cont">
+                <h2>Leitura</h2>
+                <p>Descubra exatamente o que cada linha do seu código está executando.</p>
+            </div>
+        </a>
+        <a href="logica.html">
+            <div class="card-cont">
+                <h2>Lógica dos comandos</h2>
+                <p>Entenda a estrutura por trás de tudo.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="dev">
+        <img src="nicolas.jpg" alt="foto-dev" class="dev-foto">
+        <h3>Nicolas Felipe</h3>
+        <p>Nicolas Felipe, acadêmico do 1º ano do curso Técnico em Informática, desenvolveu a plataforma Portugol Fácil. O projeto tem como objetivo principal auxiliar os estudantes de Informática do Instituto Federal (IFs), proporcionando um aprendizado mais dinâmico e acessível dos conceitos de programação.</p>
+        <a href="https://nicolasfelipe.netlify.app/" target="_blank">
+            <button>Ir para o site do desenvolvedor</button>
+        </a>
+    </div>
+    
+</body>
+</html>

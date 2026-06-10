@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugol Fácil - Exercícios Gráficos</title> 
+    <style>
+        body { background-color: rgb(34, 33, 28); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .rodape { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: #1a1a1acc; width: 100%; box-sizing: border-box; position: sticky; top: 0; z-index: 1000; }
+        .logo { height: 45px; width: auto; }
+        .btns-rodape { display: flex; gap: 10px; }
+        .btn { background: transparent; border: 2px solid transparent; padding: 8px 16px; cursor: pointer; color: #ccc; font-weight: 600; border-radius: 6px; transition: all 0.3s ease; text-decoration: none; }
+        .btn:hover, .btn-ativo { color: rgb(255, 255, 255); border-color: rgb(160, 127, 20); background-color: rgba(160, 139, 20, 0.2); }            
+        .titulo { text-align: center; margin-top: 40px; font-size: 2.3rem; color: #ffcc00; }
+        .subtitulo { text-align: center; color: #ccc; margin-bottom: 30px; }
+        .container-exercicios { width: 80%; max-width: 800px; margin-bottom: 60px; display: flex; flex-direction: column; gap: 20px; }
+        .card-exercicio { background-color: rgb(26, 25, 21); border-left: 5px solid #ffcc00; border-radius: 8px; padding: 25px; box-sizing: border-box; }
+        .card-exercicio h4 { margin: 0 0 8px 0; color: #fff4b3; font-size: 1.2rem; }
+        .card-exercicio p { margin: 0 0 15px 0; color: #b3b3b3; font-size: 14px; line-height: 1.5; }
+        details { background-color: rgba(0, 0, 0, 0.3); border-radius: 6px; padding: 5px 10px; border: 1px solid rgba(26, 188, 156, 0.2); }
+        summary { cursor: pointer; color: #ffcc00; font-weight: bold; font-size: 14px; outline: none; user-select: none; padding: 5px 0; }
+        summary:hover { color: #ffe066; }
+        pre { background-color: rgb(18, 17, 14); color: #61afef; padding: 15px; border-radius: 4px; overflow-x: auto; font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; margin: 10px 0 5px 0; border-left: 3px solid #ffcc00; }
+        .btn-voltar { display: inline-block; margin-bottom: 20px; color: #ffcc00; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+        <div class="btns-rodape">
+            <a href="exercicios.html" class="btn">Exercícios</a>
+            <a href="bibliotecas.html" class="btn btn-ativo">Bibliotecas</a>
+            <a href="leitura.html" class="btn">Leitura de Código</a>
+            <a href="logica.html" class="btn">Lógica</a>
+        </div>
+    </section>
+
+    <h1 class="titulo">Prática: Biblioteca Gráficos</h1>
+    <p class="subtitulo">Desenho de primitivas visuais e inicialização de janelas digitais</p>
+    <a href="ex-bibliotecas.html" class="btn-voltar">← Voltar para Bibliotecas</a>
+
+    <div class="container-exercicios">
+        
+        <div class="card-exercicio">
+            <h4>Exercício 01: Janela Azul</h4>
+            <p>Escreva um algoritmo que inicialize o modo gráfico e renderize uma janela de tamanho 600x400 preenchida completamente com a cor azul.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  inclua biblioteca Graficos --> g
+  funcao inicio() {
+    g.iniciar_modo_grafico(verdadeiro)
+    g.definir_dimensoes(600, 400)
+    
+    enquanto(verdadeiro) {
+      g.definir_cor(g.COR_AZUL)
+      g.limpar()
+      g.renderizar()
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+        <div class="card-exercicio">
+            <h4>Exercício 02: Alvo Retangular</h4>
+            <p>Desenvolva um algoritmo que renderize uma janela padrão e desenhe centralizado nela um retângulo preenchido com a cor amarela.</p>
+            <details>
+                <summary>Mostrar Gabarito</summary>
+                <pre>programa {
+  inclua biblioteca Graficos --> g
+  funcao inicio() {
+    g.iniciar_modo_grafico(verdadeiro)
+    enquanto(verdadeiro) {
+      g.definir_cor(g.COR_AMARELO)
+      // Desenha retângulo na pos X=100, Y=100 com 200 de largura e 100 de altura
+      g.desenhar_retangulo(100, 100, 200, 100, falso, verdadeiro)
+      g.renderizar()
+    }
+  }
+}</pre>
+            </details>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura Avançada - Portugol Fácil</title>
+    <style>
+        body {
+            background-color: rgb(51, 49, 41);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+      
+        .rodape {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;           
+            padding: 8px 1%;            
+            background-color: #1a1a1acc;    
+            width: 100%;                    
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 90px; 
+            width: auto;
+            padding: 5px;
+        }
+
+        .btns-rodape {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: #ccc;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            color: #ffcc00;
+        }
+
+        .conteudo-principal {
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            margin: 50px 0 30px 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .conteudo-principal h1 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .conteudo-principal p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .container-input {
+            width: 90%;
+            max-width: 850px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            background-color: #24211a;
+            border: 2px solid #444137;
+            border-radius: 10px;
+            color: #ffe680;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            box-sizing: border-box;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #ff9900;
+        }
+
+        .btn-analisar {
+            padding: 12px 24px;
+            background-color: #e67300;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: center;
+        }
+
+        .btn-analisar:hover {
+            background-color: #ff8c1a;
+        }
+
+       
+        .bloco-leitura {
+            background-color: #24211a;
+            border: 1px solid #3a352b;
+            max-width: 850px;
+            width: 90%;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+            display: none; 
+        }
+
+        .linha-codigo {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 6px;
+            background-color: #2a2821;
+            transition: border-color 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .linha-codigo:hover {
+            border-color: #ff9900;
+        }
+
+        .num-linha {
+            font-family: monospace;
+            color: #ff9900;
+            font-weight: bold;
+            min-width: 35px;
+        }
+
+        .texto-codigo {
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffe680;
+            flex-grow: 1;
+            white-space: pre;
+        }
+
+        .explicacao {
+            font-size: 0.9rem;
+            color: #ccc;
+            max-width: 350px;
+            text-align: right;
+            padding-left: 15px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .rodape {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btns-rodape {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .conteudo-principal h1 {
+                font-size: 2rem;
+            }
+            .linha-codigo {
+                flex-direction: column;
+            }
+            .explicacao {
+                text-align: left;
+                padding-left: 35px;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+        <div class="btns-rodape">
+            <a href="exercicios.html"><button class="btn">Exercícios</button></a>
+            <a href="bibliotecas.html"><button class="btn">Bibliotecas</button></a>
+            <a href="leitura.html"><button class="btn">Leitura de Código</button></a>
+            <a href="logica.html"><button class="btn">Lógica</button></a>
+        </div>
+    </section>
+
+    <div class="conteudo-principal">
+        <h1>Analisador de Portugol</h1>
+        <p>Cole o seu código estruturado no campo abaixo e clique em analisar para descobrir o significado de cada instrução, linha por linha.</p>
+    </div>
+
+    <div class="container-input">
+        <textarea id="inputCodigo" placeholder="programa {&#10;  funcao inicio() {&#10;    escreva(&quot;Olá, Mundo!&quot;)&#10;  }&#10;}"></textarea>
+        <button class="btn-analisar" onclick="analisarCodigo()">Analisar Linhas</button>
+    </div>
+
+    <div class="bloco-leitura" id="resultadoAnalise"></div>
+
+    <script>
+        function analisarCodigo() {
+            const caixaTexto = document.getElementById('inputCodigo');
+            const containerResultado = document.getElementById('resultadoAnalise');
+            const linhas = caixaTexto.value.split('\n');
+            
+            if (caixaTexto.value.trim() === "") {
+                alert("Por favor, cole algum código antes de analisar!");
+                return;
+            }
+
+           
+            containerResultado.innerHTML = "";
+            containerResultado.style.display = "block";
+
+            linhas.forEach((linha, index) => {
+                let explicacao = "Execução comum do fluxo do programa.";
+                const codigoLimpo = linha.trim().toLowerCase();
+
+               
+                if (codigoLimpo.startsWith("programa")) {
+                    explicacao = "Inicia o escopo global do algoritmo estruturado.";
+                } else if (codigoLimpo.startsWith("funcao inicio")) {
+                    explicacao = "Ponto de entrada obrigatório; tudo começa a executar a partir daqui.";
+                } else if (codigoLimpo.startsWith("escreva")) {
+                    explicacao = "Mostra uma mensagem ou valor de variável na tela do console.";
+                } else if (codigoLimpo.startsWith("leia")) {
+                    explicacao = "Aguarda o usuário digitar um valor e salva dentro de uma variável.";
+                } else if (codigoLimpo.startsWith("se ") || codigoLimpo.startsWith("se(")) {
+                    explicacao = "Estrutura condicional. Avalia se o teste lógico é VERDADEIRO.";
+                } else if (codigoLimpo.startsWith("senao se")) {
+                    explicacao = "Condição alternativa caso o teste do 'se' anterior tenha falhado.";
+                } else if (codigoLimpo.startsWith("senao")) {
+                    explicacao = "Caminho padrão executado quando nenhuma condição anterior foi atendida.";
+                } else if (codigoLimpo.startsWith("para")) {
+                    explicacao = "Laço de repetição controlado por uma variável com limite definido.";
+                } else if (codigoLimpo.startsWith("enquanto")) {
+                    explicacao = "Laço que repete o bloco de código enquanto a condição for verdadeira.";
+                } else if (codigoLimpo.startsWith("inteiro ")) {
+                    explicacao = "Declaração de variável para armazenar números inteiros (ex: 1, 2, -5).";
+                } else if (codigoLimpo.startsWith("real ")) {
+                    explicacao = "Declaração de variável para números quebrados com ponto decimal (ex: 4.5).";
+                } else if (codigoLimpo.startsWith("cadeia ")) {
+                    explicacao = "Declaração de variável para guardar conjuntos de texto entre aspas.";
+                } else if (codigoLimpo.startsWith("logico ")) {
+                    explicacao = "Declaração de variável booleana que aceita apenas verdadeiro ou falso.";
+                } else if (codigoLimpo.startsWith("inclua biblioteca")) {
+                    explicacao = "Importa ferramentas extras e recursos nativos do ecossistema Portugol.";
+                } else if (codigoLimpo === "}" || codigoLimpo === "{") {
+                    explicacao = codigoLimpo === "{" ? "Abertura de um bloco de comandos estruturados." : "Fechamento de um bloco de comandos delimitado.";
+                } else if (codigoLimpo.startsWith("//")) {
+                    explicacao = "Comentário no código. É ignorado pelo computador e serve apenas para documentação.";
+                } else if (codigoLimpo === "") {
+                    explicacao = "Linha em branco para fins de organização estética.";
+                }
+
+                
+                const numeroLinha = String(index + 1).padStart(2, '0');
+                
+                const divLinha = document.createElement('div');
+                divLinha.className = 'linha-codigo';
+                
+                divLinha.innerHTML = `
+                    <span class="num-linha">${numeroLinha}</span>
+                    <span class="texto-codigo">${substituirHtmlEntities(linha)}</span>
+                    <span class="explicacao">${explicacao}</span>
+                `;
+                
+                containerResultado.appendChild(divLinha);
+            });
+
+         
+            containerResultado.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function substituirHtmlEntities(texto) {
+            return texto.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+    </script>
+</body>
+</html>

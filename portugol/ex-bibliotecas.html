@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotecas - Portugol Fácil</title>
+    <style>
+        body {
+            background-color: rgb(51, 49, 41);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit; 
+        }
+      
+        .rodape {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;           
+            padding: 8px 1%;            
+            background-color: #1a1a1acc;    
+            width: 100%;                    
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 90px; 
+            width: auto;
+            padding: 5px;
+        }
+
+        .btns-rodape {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: transparent;
+            border: 2px solid transparent;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: #ccc;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            color: #ffcc00;
+        }
+
+        .conteudo-principal {
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            margin: 50px 0 30px 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .conteudo-principal h1 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .conteudo-principal p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .container-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 90%;
+            margin-bottom: 60px;
+        }
+
+        .card-cont {
+            background-color: #2a2821;
+            border: 1px solid #444137;
+            border-radius: 15px;
+            padding: 25px 20px;
+            color: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: left;
+        }
+
+        .card-cont:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 165, 0, 0.25);
+            border-color: #ff9900;
+        }
+
+        .card-cont h2 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: #ffe680;
+            border-bottom: 1px solid #444137;
+            padding-bottom: 8px;
+        }
+
+        .card-cont p {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.4;
+        }
+
+        .codigo-exemplo {
+            background-color: #1a1914;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: #ffcc00;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            .rodape {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btns-rodape {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .conteudo-principal h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="rodape">
+        <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+        <div class="btns-rodape">
+            <a href="exercicios.html"><button class="btn">Exercícios</button></a>
+            <a href="bibliotecas.html"><button class="btn">Bibliotecas</button></a>
+            <a href="leitura.html"><button class="btn">Leitura de Código</button></a>
+            <a href="logica.html"><button class="btn">Lógica</button></a>
+        </div>
+    </section>
+
+    <div class="conteudo-principal">
+        <h1>Exercícios de Bibliotecas do Portugol</h1>
+        <p>Aprenda a usar as bibliotecas com exercícios</p>
+    </div>
+
+    <div class="container-cards">
+        <a href="ex-mat.html">
+    <div class="card-cont">
+        <h2>Matemática</h2>
+        <p>Utilizada para operações matemáticas avançadas como potenciação, radiciação e arredondamentos.</p>
+        <div class="codigo-exemplo">inclua biblioteca Matematica --> mat</div>
+    </div>
+</a>
+
+<a href="ex-texto.html">
+    <div class="card-cont">
+        <h2>Texto</h2>
+        <p>Permite manipular, analisar, recortar e transformar cadeias de caracteres (strings).</p>
+        <div class="codigo-exemplo">inclua biblioteca Texto --> txt</div>
+    </div>
+</a>
+
+<a href="ex-util.html">
+    <div class="card-cont">
+        <h2>Utilidades</h2>
+        <p>Reúne ferramentas diversas como geração de números aleatórios (sorteio) e pausas no sistema.</p>
+        <div class="codigo-exemplo">inclua biblioteca Utilidades --> util</div>
+    </div>
+</a>
+
+<a href="ex-arquivos.html">
+    <div class="card-cont">
+        <h2>Arquivos</h2>
+        <p>Permite criar, ler, escrever e manipular arquivos de texto (.txt) externos ao programa.</p>
+        <div class="codigo-exemplo">inclua biblioteca Arquivos --> arq</div>
+    </div>
+</a>
+
+<a href="ex-graficos.html">
+    <div class="card-cont">
+        <h2>Gráficos</h2>
+        <p>Cria janelas visuais para desenhar formas geométricas, carregar imagens e criar jogos.</p>
+        <div class="codigo-exemplo">inclua biblioteca Graficos --> g</div>
+    </div>
+</a>
+
+<a href="ex-teclado.html">
+    <div class="card-cont">
+        <h2>Teclado</h2>
+        <p>Detecta em tempo real quais teclas estão sendo pressionadas ou soltas pelo usuário.</p>
+        <div class="codigo-exemplo">inclua biblioteca Teclado --> t</div>
+    </div>
+</a>
+
+<a href="ex-mouse.html">
+    <div class="card-cont">
+        <h2>Mouse</h2>
+        <p>Rastreia as coordenadas X e Y do cursor e identifica cliques dos botões na janela gráfica.</p>
+        <div class="codigo-exemplo">inclua biblioteca Mouse --> m</div>
+    </div>
+</a>
+
+<a href="ex-sons.html">
+    <div class="card-cont">
+        <h2>Sons</h2>
+        <p>Permite carregar, reproduzir e controlar o volume de arquivos de áudio (como .mp3 ou .wav).</p>
+        <div class="codigo-exemplo">inclua biblioteca Sons --> s</div>
+    </div>
+</a>
+    </div>
+    
+</body>
+</html>
