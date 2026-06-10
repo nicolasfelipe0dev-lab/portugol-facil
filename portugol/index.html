@@ -6,7 +6,6 @@
     <title>Portugol Fácil</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
-       
         body {
             background-color: rgb(51, 49, 41);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,7 +17,6 @@
             align-items: center;
         }
 
-       
         a {
             text-decoration: none;
             color: inherit; 
@@ -59,7 +57,6 @@
             transition: all 0.3s ease;
         }
 
-       
         .btn:hover {
             color: #ffcc00;
         }
@@ -73,7 +70,6 @@
             box-sizing: border-box;
         }
 
-      
         .conteudo-principal h1 {
             font-size: 2.5rem;
             color: #ffcc00;
@@ -92,7 +88,7 @@
             gap: 20px;
             max-width: 1000px;
             width: 90%;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .card-cont {
@@ -106,14 +102,12 @@
             text-align: center;
         }
 
-       
         .card-cont:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(255, 165, 0, 0.25);
             border-color: #ff9900;
         }
 
-       
         .card-cont h2 {
             font-size: 1.4rem;
             margin-top: 0;
@@ -125,8 +119,94 @@
             color: #ccc;
             line-height: 1.4;
         }
+
+        .bloco-avaliacao {
+            background-color: #24211a;
+            border: 1px solid #3a352b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            width: 90%;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+
+        .bloco-avaliacao h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+            color: #ffcc00;
+        }
+
+        .avaliador-estrelas {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .avaliador-estrelas input {
+            display: none;
+        }
+
+        .avaliador-estrelas label {
+            font-size: 2.5rem;
+            color: #444137;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .avaliador-estrelas input:checked ~ label,
+        .avaliador-estrelas label:hover,
+        .avaliador-estrelas label:hover ~ label {
+            color: #ffcc00;
+        }
+
+        .bloco-avaliacao input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a1914;
+            border: 1px solid #444137;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .bloco-avaliacao input[type="text"]:focus {
+            border-color: #ffcc00;
+        }
+
+        .btn-enviar-feedback {
+            padding: 12px 24px;
+            background-color: #e67300;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, opacity 0.2s;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn-enviar-feedback:hover {
+            background-color: #ff8c1a;
+        }
+
+        .btn-enviar-feedback:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
         
-       
         .dev {
             background-color: #24211a;
             border: 1px solid #3a352b;
@@ -143,7 +223,6 @@
             box-sizing: border-box;
         }
 
-        
         .dev img {
             width: 130px;
             height: 130px;            
@@ -166,7 +245,6 @@
             margin-bottom: 20px;
         }
 
-        
         .dev button {
             padding: 12px 24px;
             background-color: #e67300;
@@ -178,7 +256,6 @@
             transition: background 0.2s;
         }
 
-       
         .dev button:hover {
             background-color: #ff8c1a;
         }
@@ -242,6 +319,22 @@
         </a>
     </div>
 
+    <form id="form-projeto3" class="bloco-avaliacao">
+        <h3>Deixe sua avaliação:</h3>
+        <input type="hidden" name="email_alvo" value="nicolasfelipe0dev@gmail.com">
+        <input type="hidden" name="projeto_nome" value="Portugol Fácil">
+
+        <div class="avaliador-estrelas">
+            <input type="radio" name="estrelas_p3" id="s3-star5" value="5" required><label for="s3-star5">★</label>
+            <input type="radio" name="estrelas_p3" id="s3-star4" value="4"><label for="s3-star4">★</label>
+            <input type="radio" name="estrelas_p3" id="s3-star3" value="3"><label for="s3-star3">★</label>
+            <input type="radio" name="estrelas_p3" id="s3-star2" value="2"><label for="s3-star2">★</label>
+            <input type="radio" name="estrelas_p3" id="s3-star1" value="1"><label for="s3-star1">★</label>
+        </div>
+        <input type="text" id="feedback3" name="feedback3" placeholder="Deixe seu feedback aqui..." required>
+        <button type="submit" class="btn-enviar-feedback">Enviar Avaliação</button>
+    </form>
+
     <div class="dev">
         <img src="nicolas.jpg" alt="foto-dev" class="dev-foto">
         <h3>Nicolas Felipe</h3>
@@ -250,6 +343,56 @@
             <button>Ir para o site do desenvolvedor</button>
         </a>
     </div>
+
+    <script>
+        function ativarEnvioDeFeedback(idForm, nameEstrelas, idTexto) {
+            const form = document.getElementById(idForm);
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+
+                const botao = form.querySelector('.btn-enviar-feedback');
+                botao.innerText = 'Enviando...';
+                botao.disabled = true;
+
+                const emailDestino = form.querySelector('input[name="email_alvo"]').value;
+                const nomeDoProjeto = form.querySelector('input[name="projeto_nome"]').value;
+                const notaEstrelas = form.querySelector(`input[name="${nameEstrelas}"]:checked`).value;
+                const textoFeedback = document.getElementById(idTexto).value;
+
+                const dadosFormulario = {
+                    _subject: `Nova Avaliação: ${nomeDoProjeto}`,
+                    Projeto: nomeDoProjeto,
+                    Estrelas: `${notaEstrelas} ★`,
+                    Feedback: textoFeedback
+                };
+
+                fetch(`https://formsubmit.co/ajax/${emailDestino}`, {
+                    method: "POST",
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(dadosFormulario)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Muito obrigado! Sua avaliação foi enviada com sucesso.');
+                    form.reset(); 
+                })
+                .catch(error => {
+                    console.error('Erro no envio:', error);
+                    alert('Ops! Ocorreu um problema ao enviar. Tente novamente mais tarde.');
+                })
+                .finally(() => {
+                    botao.innerText = 'Enviar Avaliação';
+                    botao.disabled = false;
+                });
+            });
+        }
+
+        ativarEnvioDeFeedback('form-projeto3', 'estrelas_p3', 'feedback3');
+    </script>
     
 </body>
 </html>
